@@ -1,31 +1,35 @@
-import styles from "@/styles/components/exercises/exercises.module.css";
+import styles from "@/styles/pages/exercises/exercises.module.css";
+import Link from "next/link";
+import { PiListNumbers, PiTextAaBold  } from "react-icons/pi";
+
 
 export default function Exercises() {
 
   return (
     <main className={styles.container}>
-       <nav>
+        <section className={styles.links__lessons_container}>
+                <header>
+                    <h2>Exercícios</h2>
+                    <p>Pratique seu inglês com atividades online.</p>
+                </header>
+                <nav>
                       <ul>
                           <li>
-                            <Link href={"/lessons/apartment-living"}>
-                              <PiBuildingsBold  size={26}  />
-                              Apartment Living
+                            <Link href={"/exercises/display-numbers"}>
+                              <PiListNumbers size={26}  />
+                              Números
                             </Link>
                             </li>
                           <li>
-                            <Link href={"/lessons/apartment-rent"}>
-                              <LuBuilding size={26} />
-                              Apartments for Rent
+                            <Link href={"/exercises/display-letters"}>
+                              <PiTextAaBold  size={26} />
+                              Letras
                             </Link>
                           </li>
-                          <li>
-                            <Link href={"/lessons/dinner-ideas"}>
-                              <PiPizzaBold size={26} />
-                              Dinner Ideas
-                            </Link>
-                          </li>
+                        
                       </ul>
                 </nav>
+            </section>
     </main>
   );
 }

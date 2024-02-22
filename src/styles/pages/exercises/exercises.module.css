@@ -1,0 +1,46 @@
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.links__lessons_container{
+  margin: 24px 0 48px 0;
+  color: #333;
+  box-shadow: 7px 3px 36px -21px rgba(51,51,51,0.67);
+}
+
+.links__lessons_container header{
+  background-color: #B59678;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 24px;
+  color: #fff;
+  text-align: center;
+}
+
+.links__lessons_container nav{
+  padding: 12px;
+  background-color: #fff;
+  
+}
+
+.links__lessons_container nav ul li{
+  list-style: none;
+  margin: 24px 0;
+  background-color: #e3e3e3;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.links__lessons_container nav ul li:hover{
+  background-color: #cdcdcd;
+}
+
+.links__lessons_container nav ul li a{
+  font-weight: 600;
+  padding: 1px 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

@@ -18,7 +18,7 @@ export default function Header() {
             <nav>
               <ul>
                 <li><Link href="/"><AiOutlineHome size={22} /> Home</Link></li>
-                <li><Link href="/exercises/display-numbers"><PiNoteDuotone size={22} /> Exercícios</Link></li>
+                <li><Link href="/exercises/"><PiNoteDuotone size={22} /> Exercícios</Link></li>
                 {/* <li><Link href="./lessons/apartment-living"><AiOutlineFileText   size={22} />Lessons</Link></li> */}
                 
                 
