@@ -1,8 +1,9 @@
 'use client'
-import styles from "@/styles/components/displayNumbers/StartChallenge.module.css";
 import { useState } from "react";
 
-export default function StartChallenge({setIsChallengeStarted, setDisplayDatas}) {
+import styles from '@/styles/components/exercises/startChallenge/StartChallenge.module.css'
+
+export default function BigStartChallenge({setIsChallengeStarted, setDisplayDatas}){
   const [min, setMin] = useState()
   const [max, setMax] = useState()
   const [timeDisplay, setTimeDisplay] = useState()

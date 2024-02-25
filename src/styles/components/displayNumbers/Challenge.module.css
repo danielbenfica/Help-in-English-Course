@@ -1,14 +1,23 @@
-.container {
-  width: 50%;
+.container{
+  width: 100%;
+  padding: 0 24px;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main_contet {
+  width: 100%;
   height: 10vh;
 }
 
-.container .header{
+.controls{
   display: flex;
-  justify-content: center;
+
+  justify-content: right;
 }
 
-.container button{
+.controls button{
   background-color: rgb(249, 76, 76);
   border-radius: 12px;
   border: none;
@@ -19,12 +28,18 @@
   color: white;
 }
 
-.container .displayNumber{
+.main_contet .displayNumber{
+  flex: 1;
   display: flex;
   justify-content: center;
   height: 150px;
 }
 
-.container h2{
+.main_contet h2{
   font-size: 120px;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
 }

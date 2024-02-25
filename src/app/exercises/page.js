@@ -1,12 +1,18 @@
+import HeaderPage from "@/components/headerPage/headerPage";
 import styles from "@/styles/pages/exercises/exercises.module.css";
 import Link from "next/link";
-import { PiListNumbers, PiTextAaBold  } from "react-icons/pi";
+import { PiListNumbersBold, PiTextAaBold, PiMathOperationsBold } from "react-icons/pi";
 
 
 export default function Exercises() {
 
   return (
     <main className={styles.container}>
+        <header className={styles.header_page}>
+          <HeaderPage title={"Exercícios"} />
+        </header>
+        <div className={styles.main_content}>
+
         <section className={styles.links__lessons_container}>
                 <header>
                     <h2>Exercícios</h2>
@@ -16,20 +22,27 @@ export default function Exercises() {
                       <ul>
                           <li>
                             <Link href={"/exercises/display-numbers"}>
-                              <PiListNumbers size={26}  />
+                              <PiListNumbersBold size={26}  />
                               Números
                             </Link>
                             </li>
                           <li>
                             <Link href={"/exercises/display-letters"}>
                               <PiTextAaBold  size={26} />
-                              Letras
+                              Alfabeto
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href={"/exercises/display-operations"}>
+                              <PiMathOperationsBold   size={26} />
+                              Operações
                             </Link>
                           </li>
                         
                       </ul>
                 </nav>
             </section>
+        </div>
     </main>
   );
 }

@@ -1,8 +1,9 @@
 'use client'
-import styles from "@/styles/components/displayNumbers/StartChallenge.module.css";
 import { useState } from "react";
 
-export default function StartChallenge({setIsChallengeStarted, setDisplayDatas}) {
+import styles from '@/styles/components/exercises/startChallenge/StartChallenge.module.css'
+
+export default function SmallStartChallenge({setIsChallengeStarted, setDisplayDatas, contentText}){
   const [timeDisplay, setTimeDisplay] = useState()
 
   return (
@@ -11,7 +12,7 @@ export default function StartChallenge({setIsChallengeStarted, setDisplayDatas})
         <input 
           onChange={(e) => setTimeDisplay(e.target.value)}
           type="number" /> 
-        <span>segundos por letra</span>
+        <span>{contentText}</span>
       </div>
       <button onClick={() => {
         setIsChallengeStarted(true)

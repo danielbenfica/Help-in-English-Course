@@ -1,0 +1,18 @@
+.page__header_title{
+  display: flex;
+  align-items: center;
+  margin: 32px ;
+  color: #333;
+}
+
+.page__header_title span{
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.page__header_title span:hover{
+  transform: translateX(-8px);
+}
+

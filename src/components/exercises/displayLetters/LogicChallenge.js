@@ -1,9 +1,8 @@
 'use client'
-import styles from "@/styles/components/displayNumbers/Challenge.module.css";
 import { useEffect, useState } from "react";
+import DisplayChallenge from "../challenge/DisplayChallenge";
 
-
-export default function Challenge({setIsChallengeStarted, displayDatas}) {
+export default function LogicChallenge({setIsChallengeStarted, displayDatas}) {
   const [number, setNumber] = useState(0)
   const [isNumberVisible, setIsNumberVisible] = useState(false)
 
@@ -34,13 +33,6 @@ export default function Challenge({setIsChallengeStarted, displayDatas}) {
   }, [isNumberVisible])
   
   return (
-    <main className={styles.container}>
-      <div className={styles.displayNumber}>
-        {isNumberVisible && <h2>{number}</h2>}
-      </div>
-      <div className={styles.header}>
-        <button onClick={() => setIsChallengeStarted(false)}>Parar</button>
-      </div>
-    </main>
+    <DisplayChallenge isNumberVisible={isNumberVisible} dataToDisplay={number} setIsChallengeStarted={setIsChallengeStarted} />
   );
 }
