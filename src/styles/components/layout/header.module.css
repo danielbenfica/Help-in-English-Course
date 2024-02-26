@@ -17,7 +17,7 @@
 }
 .logoTitle {
   width: 100px;
-  margin-left: 1rem;
+  margin-left: 0.7rem;
   color: #DBC7B4;
   letter-spacing: 1px;
   font-size: 1.4rem;
@@ -49,3 +49,9 @@
   color: #DBC7B4;
 }
 /* #2E3138 */
+
+@media (max-width: 600px) {
+  .header{
+    padding: 0 12px;
+  }
+}
