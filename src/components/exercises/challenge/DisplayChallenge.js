@@ -10,7 +10,7 @@ export default function DisplayChallenge({isNumberVisible, dataToDisplay, setIsC
           </div>
         </main>
         <div className={styles.controls}>
-            <button onClick={() => setIsChallengeStarted(false)}>Parar</button>
+            <button onClick={() => setIsChallengeStarted(false)}>Stop</button>
         </div>
     </div>
   );

@@ -38,6 +38,12 @@ export default function Exercises() {
                               Operações
                             </Link>
                           </li>
+                          <li>
+                            <Link href={"/exercises/display-hours"}>
+                              <PiMathOperationsBold   size={26} />
+                              Horas
+                            </Link>
+                          </li>
                         
                       </ul>
                 </nav>
