@@ -21,8 +21,8 @@ export default function LogicChallenge({setIsChallengeStarted, displayDatas}) {
   }
 
   function generateHour(){
-    let hour = generateRandomNumber(0, 14)
-    let minute = generateRandomNumber(0, 61)
+    let hour = generateRandomNumber(0, 13)
+    let minute = generateRandomNumber(0, 60)
     if(hour <= 9){
       hour = '0' + hour
     }
