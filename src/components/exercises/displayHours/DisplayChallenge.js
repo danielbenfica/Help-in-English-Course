@@ -2,8 +2,6 @@
 import { useEffect, useState } from "react";
 import DisplayChallenge from "../challenge/DisplayChallenge";
 
-// import DisplayChallenge from "../challenge/DisplayChallenge";
-
 export default function LogicChallenge() {
   const [hour, setHour] = useState(0)
   const [timeDisplay, setTimeDisplay] = useState(3000)
@@ -18,11 +16,8 @@ export default function LogicChallenge() {
     min = Math.ceil(min);
     max = Math.floor(max);
     const finalNumber = Math.floor(Math.random() * (max - min) + min);
-    if(Number(finalNumber) > 59){
-      generateRandomNumber(min, max)
-    } else{
-      return finalNumber
-    }
+    return finalNumber
+    
   }
 
   function generateHour(){

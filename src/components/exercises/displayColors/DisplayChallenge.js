@@ -4,7 +4,6 @@ import DisplayChallenge from "../challenge/DisplayChallenge";
 
 export default function LogicChallenge() {
   const [color, setColor] = useState(0)
-  // const [color, setColor] = useState(0)
   const [timeDisplay, setTimeDisplay] = useState(3000)
   const [isNumberVisible, setIsNumberVisible] = useState(false)
 
