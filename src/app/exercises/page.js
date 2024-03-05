@@ -1,7 +1,7 @@
 import HeaderPage from "@/components/headerPage/headerPage";
 import styles from "@/styles/pages/exercises/exercises.module.css";
 import Link from "next/link";
-import { PiListNumbersBold, PiTextAaBold, PiMathOperationsBold, PiClockCountdownBold} from "react-icons/pi";
+import { PiListNumbersBold, PiTextAaBold, PiMathOperationsBold, PiClockCountdownBold, PiPaletteBold} from "react-icons/pi";
 
 
 export default function Exercises() {
@@ -42,6 +42,12 @@ export default function Exercises() {
                             <Link href={"/exercises/display-hours"}>
                               <PiClockCountdownBold  size={26} />
                               Horas
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href={"/exercises/display-colors"}>
+                              <PiPaletteBold  size={26} />
+                              Cores
                             </Link>
                           </li>
                         

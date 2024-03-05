@@ -8,12 +8,17 @@
 }
 .main_contet {
   width: 100%;
-  height: 10vh;
+  height: 100%;
+  /* box-shadow: 7px 3px 36px -21px rgba(51,51,51,0.67); */
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
 }
 
 .controls{
   display: flex;
-
   justify-content: right;
 }
 
@@ -26,20 +31,15 @@
   cursor: pointer;
   font-weight: 700;
   color: white;
+  margin-top: 1rem;
 }
 
-.main_contet .displayNumber{
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  height: 150px;
-}
-
-.main_contet h2{
-  font-size: 120px;
+.main_contet div{
+  font-size: 140px;
 }
 
 .circle {
   width: 50px;
   height: 50px;
+  box-shadow: 7px 3px 36px -21px rgba(51,51,51,0.67);
 }

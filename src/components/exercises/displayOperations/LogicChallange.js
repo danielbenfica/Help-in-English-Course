@@ -3,18 +3,26 @@ import { useEffect, useState } from "react";
 import DisplayChallenge from "../challenge/DisplayChallenge";
 
 
-export default function LogicChallenge({setIsChallengeStarted, displayDatas}) {
+export default function LogicChallenge() {
   const [operation, setOperation] = useState("")
+  const [timeDisplay, setTimeDisplay] = useState(3000)
+  const [isNumberVisible, setIsNumberVisible] = useState(false)
+
   const operationsPlusAndMultiply = 
       [{culculate: (num1, num2) => num1 + num2, operation: "+"},
       {culculate: (num1, num2) => num1 * num2, operation: "x"},]
-  const [isNumberVisible, setIsNumberVisible] = useState(false)
+      
+
+  useEffect(() => {
+    const timeToDisplayText = JSON.parse(localStorage.getItem('settingsData'))
+    setTimeDisplay(timeToDisplayText.durationOperations * 1000)
+  }, [])
 
   function generateRandomNumber(min, max){
     min = Math.ceil(min);
     max = Math.floor(max);
     const finalNumber = Math.floor(Math.random() * (max - min) + min);
-    if(Number(finalNumber) > displayDatas.max){
+    if(Number(finalNumber) > max){
       generateRandomNumber(min, max)
     } else{
       return finalNumber
@@ -49,12 +57,12 @@ export default function LogicChallenge({setIsChallengeStarted, displayDatas}) {
       }, 4000)
     }
     if(isNumberVisible){
-      setTimeout(() => setIsNumberVisible(false), displayDatas.timeDisplay * 1000)
+      setTimeout(() => setIsNumberVisible(false), timeDisplay)
     }
 
   }, [isNumberVisible])
   
   return (
-    <DisplayChallenge isNumberVisible={isNumberVisible} dataToDisplay={operation} setIsChallengeStarted={setIsChallengeStarted} />
+    <DisplayChallenge isNumberVisible={isNumberVisible} dataToDisplay={operation} />
   );
 }

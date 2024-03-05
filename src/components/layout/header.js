@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "@/styles/components/layout/header.module.css";
 import Link from "next/link";
 import { AiOutlineHome, AiOutlineFileText } from "react-icons/ai";
-import { PiNoteDuotone } from "react-icons/pi";
+import { PiNoteDuotone, PiGear } from "react-icons/pi";
 
 
 export default function Header() {
@@ -19,6 +19,7 @@ export default function Header() {
               <ul>
                 <li><Link href="/"><AiOutlineHome size={22} /> Home</Link></li>
                 <li><Link href="/exercises/"><PiNoteDuotone size={22} /> Exercícios</Link></li>
+                <li><Link href="/settings/questions"><PiGear size={22} /> Configurações</Link></li>
                 {/* <li><Link href="./lessons/apartment-living"><AiOutlineFileText   size={22} />Lessons</Link></li> */}
                 
                 

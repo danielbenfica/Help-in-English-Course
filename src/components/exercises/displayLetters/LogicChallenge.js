@@ -2,11 +2,17 @@
 import { useEffect, useState } from "react";
 import DisplayChallenge from "../challenge/DisplayChallenge";
 
-export default function LogicChallenge({setIsChallengeStarted, displayDatas}) {
+export default function LogicChallenge() {
   const [number, setNumber] = useState(0)
   const [isNumberVisible, setIsNumberVisible] = useState(false)
-
+  const [timeDisplay, setTimeDisplay] = useState(3000)
+  
   const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+
+  useEffect(() => {
+    const timeToDisplayText = JSON.parse(localStorage.getItem('settingsData'))
+    setTimeDisplay(timeToDisplayText.durationAlphabet * 1000)
+  }, [])
 
   function generateRandomNumber(min, max){
     min = Math.ceil(min);
@@ -27,12 +33,12 @@ export default function LogicChallenge({setIsChallengeStarted, displayDatas}) {
       }, 4000)
     }
     if(isNumberVisible){
-      setTimeout(() => setIsNumberVisible(false), displayDatas.timeDisplay * 1000)
+      setTimeout(() => setIsNumberVisible(false), timeDisplay)
     }
 
   }, [isNumberVisible])
   
   return (
-    <DisplayChallenge isNumberVisible={isNumberVisible} dataToDisplay={number} setIsChallengeStarted={setIsChallengeStarted} />
+    <DisplayChallenge isNumberVisible={isNumberVisible} dataToDisplay={number}/>
   );
 }

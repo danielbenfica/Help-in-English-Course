@@ -1,13 +1,18 @@
 'use client'
 import { useEffect, useState } from "react";
-import styles from "@/styles/components/displayNumbers/Challenge.module.css";
 import DisplayChallenge from "../challenge/DisplayChallenge";
 
 // import DisplayChallenge from "../challenge/DisplayChallenge";
 
-export default function LogicChallenge({setIsChallengeStarted, displayDatas}) {
+export default function LogicChallenge() {
   const [hour, setHour] = useState(0)
+  const [timeDisplay, setTimeDisplay] = useState(3000)
   const [isNumberVisible, setIsNumberVisible] = useState(false)
+
+  useEffect(() => {
+    const timeToDisplayText = JSON.parse(localStorage.getItem('settingsData'))
+    setTimeDisplay(timeToDisplayText.durationHours * 1000)
+  }, [])
 
   function generateRandomNumber(min, max){
     min = Math.ceil(min);
@@ -41,12 +46,12 @@ export default function LogicChallenge({setIsChallengeStarted, displayDatas}) {
       }, 4000)
     }
     if(isNumberVisible){
-      setTimeout(() => setIsNumberVisible(false), displayDatas.timeDisplay * 1000)
+      setTimeout(() => setIsNumberVisible(false), timeDisplay)
     }
 
   }, [isNumberVisible])
   
   return (
-    <DisplayChallenge isNumberVisible={isNumberVisible} dataToDisplay={hour} setIsChallengeStarted={setIsChallengeStarted} />
+    <DisplayChallenge isNumberVisible={isNumberVisible} dataToDisplay={hour}/>
   );
 }

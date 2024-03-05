@@ -14,8 +14,8 @@
 }
 
 .links__lessons_container{
-  
   margin: 24px 0 48px 0;
+  width: 50%;
   color: #333;
   box-shadow: 7px 3px 36px -21px rgba(51,51,51,0.67);
 }
@@ -30,14 +30,20 @@
 }
 
 .links__lessons_container nav{
-  padding: 12px;
+  padding: 24px;
   background-color: #fff;
   
 }
+.links__lessons_container nav ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
 
 .links__lessons_container nav ul li{
+  grid-column-start: 2 3;
   list-style: none;
-  margin: 24px 0;
+
   background-color: #e3e3e3;
   padding: 10px;
   border-radius: 8px;
