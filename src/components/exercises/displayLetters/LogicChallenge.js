@@ -18,17 +18,13 @@ export default function LogicChallenge() {
     min = Math.ceil(min);
     max = Math.floor(max);
     const finalNumber = Math.floor(Math.random() * (max - min) + min);
-    if(Number(finalNumber) > 25){
-      generateRandomNumber(min, max)
-    } else{
-      return finalNumber
-    }
+    return finalNumber
   }
 
   useEffect(() => {
     if(!isNumberVisible){
       setTimeout(() => {
-        setNumber(() => alphabet[generateRandomNumber(0, (25 + 2))])
+        setNumber(() => alphabet[generateRandomNumber(0, (25 + 1))])
         setIsNumberVisible(true)
       }, 4000)
     }

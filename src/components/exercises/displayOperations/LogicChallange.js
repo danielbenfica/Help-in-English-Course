@@ -30,8 +30,8 @@ export default function LogicChallenge() {
   }
   
   function createOperations(){
-    const num1 = generateRandomNumber(0, 9)
-    const num2 = generateRandomNumber(0, 9)
+    const num1 = generateRandomNumber(0, 10)
+    const num2 = generateRandomNumber(0, 10)
     const operationType = generateRandomNumber(0, 4)
     
     if(operationType === 2){

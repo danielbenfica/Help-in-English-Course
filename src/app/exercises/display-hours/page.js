@@ -1,4 +1,3 @@
-import SmallStartChallenge from "@/components/exercises/startChallenges/SmallChallenge";
 import LogicChallenge from "@/components/exercises/displayHours/DisplayChallenge";
 
 import styles from "@/styles/pages/exercises/displayers/Displayers.module.css";
@@ -11,7 +10,7 @@ export default function DisplayColors() {
         <HeaderPage title={"Exercício das Horas"} /> 
       </header>
       <main className={styles.main__content}>
-          <LogicChallenge setIsChallengeStarted={setIsChallengeStarted} displayDatas={displayDatas} />
+          <LogicChallenge />
         </main>
     </div>
   );

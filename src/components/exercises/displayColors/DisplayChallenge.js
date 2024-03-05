@@ -36,6 +36,6 @@ export default function LogicChallenge() {
   }, [isNumberVisible])
   
   return (
-    <DisplayChallenge isNumberVisible={isNumberVisible} dataToDisplay={<div style={{height: "300px", width: "300px", borderRadius: "100%", background: color}}></div>}/>
+    <DisplayChallenge isNumberVisible={isNumberVisible} dataToDisplay={<div style={{height: "400px", width: "400px", borderRadius: "100%", background: color}}></div>}/>
   );
 }
