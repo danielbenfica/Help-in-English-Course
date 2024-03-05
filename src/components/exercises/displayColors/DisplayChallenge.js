@@ -1,9 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
-import styles from "@/styles/components/displayNumbers/Challenge.module.css";
 import DisplayChallenge from "../challenge/DisplayChallenge";
-
-// import DisplayChallenge from "../challenge/DisplayChallenge";
 
 export default function LogicChallenge() {
   const [color, setColor] = useState(0)
