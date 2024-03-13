@@ -1,7 +1,7 @@
 'use client'
 import HeaderPage from "@/components/headerPage/headerPage";
 import Header from "@/components/layout/header";
-import { PiListNumbers, PiTextAa, PiMathOperations, PiClockCountdown, PiPaletteBold} from "react-icons/pi";
+import { PiUserBold, PiListNumbers, PiTextAa, PiMathOperations, PiClockCountdown, PiPaletteBold} from "react-icons/pi";
 import styles from '@/styles/pages/settings/settings.module.css'
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -16,10 +16,11 @@ export default function Settings(){
   const [durationOperations, setDurationOperations] = useState(0)
   const [durationHours, setDurationHours] = useState(0)
   const [durationColors, setDurationColors] = useState(0)
+  const [durationPersonalPronouns, setDurationPersonalPronouns] = useState(0)
 
   function saveDatasUpdate(){
     localStorage.setItem('settingsData', `
-    {"durationAlphabet": ${durationAlphabet},"durationNumber":${durationNumber},"durationOperations":${durationOperations},"durationHours":${durationHours},"initialNumber":${initialNumber},"finalNumber":${finalNumber},"durationColors":${durationColors}}`)
+    {"durationAlphabet": ${durationAlphabet},"durationNumber":${durationNumber},"durationOperations":${durationOperations},"durationHours":${durationHours},"initialNumber":${initialNumber},"finalNumber":${finalNumber},"durationColors":${durationColors}, "durationPersonalPronouns": ${durationPersonalPronouns}}`)
     
     toast.success('Alterações salvas com sucesso!', {
       position: "top-center",
@@ -37,7 +38,7 @@ export default function Settings(){
     const localStorageDatas = localStorage.getItem('settingsData')
     let localDatas = ''
     if(!localStorageDatas){
-      localDatas = '{"durationAlphabet": 3,"durationNumber":3,"durationOperations":5,"durationHours":4,"initialNumber":0,"finalNumber":100,"durationColors":3}'
+      localDatas = '{"durationAlphabet": 3,"durationNumber":3,"durationOperations":5,"durationHours":4,"initialNumber":0,"finalNumber":100,"durationColors":3, "durationPersonalPronouns":3}'
       localStorage.setItem('settingsData', localDatas)
     }
   
@@ -49,6 +50,7 @@ export default function Settings(){
     setDurationOperations(settingsDatas.durationOperations)
     setDurationHours(settingsDatas.durationHours)
     setDurationColors(settingsDatas.durationColors)
+    setDurationPersonalPronouns(settingsDatas.durationPersonalPronouns)
   }, [])
 
   return (
@@ -159,6 +161,24 @@ export default function Settings(){
                   <input 
                     onChange={(e) => setDurationColors(e.target.value)}
                     value={durationColors}
+                    type="number" /> segundos
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div  className={styles.option_card}>
+            <div> 
+              <PiUserBold  size={32}  />
+            </div>
+            <div>
+            <h2>Pronomes Pessoais:</h2>
+              <div>
+                <div>
+                  <span>Duração:</span>
+                  <input 
+                    onChange={(e) => setDurationPersonalPronouns(e.target.value)}
+                    value={durationPersonalPronouns}
                     type="number" /> segundos
                 </div>
               </div>
