@@ -1,7 +1,7 @@
 import HeaderPage from "@/components/headerPage/headerPage";
 import styles from "@/styles/pages/exercises/exercises.module.css";
 import Link from "next/link";
-import { PiUserBold, PiListNumbersBold, PiTextAaBold, PiMathOperationsBold, PiClockCountdownBold, PiPaletteBold} from "react-icons/pi";
+import { PiUserBold, PiArrowsOutCardinalBold, PiListNumbersBold, PiTextAaBold, PiMathOperationsBold, PiClockCountdownBold, PiPaletteBold} from "react-icons/pi";
 
 
 export default function Exercises() {
@@ -54,6 +54,12 @@ export default function Exercises() {
                             <Link href={"/exercises/display-pronouns"}>
                               <PiUserBold  size={26} />
                               Pronomes Pessoais
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href={"/exercises/display-directions"}>
+                              <PiArrowsOutCardinalBold   size={26} />
+                              Direções
                             </Link>
                           </li>
                         
