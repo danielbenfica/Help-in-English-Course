@@ -7,7 +7,7 @@ export default function LogicChallenge() {
   const [isNumberVisible, setIsNumberVisible] = useState(false)
   const [timeDisplay, setTimeDisplay] = useState(3000)
   
-  const alphabet = ["Up", "Left", "Right", "Down"]
+  const alphabet = ["Up", "Left", "Right", "Down", "turn left", "turn right", "go straight ahead", "go past", "cross", "at the corner of", "next to", "opposite", "between", "on", "under", "below","over", "above", "in", "behind", "in front of", "into", "out of", "up", "through", "across", "bisede", "around"]
 
   useEffect(() => {
     const timeToDisplayText = JSON.parse(localStorage.getItem('settingsData'))
