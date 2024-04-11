@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 export default function LogicChallenge({params}){
   const [dataToDisplay, setDataToDisplay] = useState(0)
   const [isDataVisible, setIsDataVisible] = useState(false)
-  const [timeDisplay, setTimeDisplay] = useState(4000)
+  const [timeDisplay, setTimeDisplay] = useState(3000)
 
 
   function generateRandomNumber(min, max){
