@@ -64,6 +64,11 @@ export default function Settings(){
         </header>
         <main className={styles.main_content}>
           <ToastContainer/>
+          <header>
+            <h3>
+              Questões  
+            </h3>
+          </header>
 
           <div  className={styles.option_card}>
             <div> 

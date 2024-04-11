@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #3C3F50;
 }
 .container header{
   margin-top: 40px;
@@ -13,18 +14,20 @@
 }
 
 .container .main_content{
-  background-color: #fff;
   width: 50%;
   border-radius: 16px;
-  box-shadow: 7px 3px 36px -21px rgba(51,51,51,0.67);
+  /* box-shadow: 7px 3px 36px -21px rgba(51,51,51,0.67); */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 .main_content .option_card{
   display: flex;
-  border-bottom: 1px solid #b7b7b7;
+  background-color: #fff;
   padding: 24px 0;
-  color: #333;
   font-size: 1rem;
   font-weight: 600;
+  box-shadow: 3px 3px 10px 1px rgba(220, 220, 220, 0.67);
 }
 
 .main_content .option_card input{

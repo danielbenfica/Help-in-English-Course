@@ -1,15 +1,19 @@
 import HeaderPage from "@/components/headerPage/headerPage";
 import styles from "@/styles/pages/exercises/exercises.module.css";
 import Link from "next/link";
+import json from '@/assets/json-datas/questions.json'
 import { PiUserBold, PiArrowsOutCardinalBold, PiListNumbersBold, PiTextAaBold, PiMathOperationsBold, PiClockCountdownBold, PiPaletteBold} from "react-icons/pi";
+import { BsCalendar2Day, BsCalendarMonth  } from "react-icons/bs";
 
 
 export default function Exercises() {
 
+  const icons = [<PiListNumbersBold size={26}/>, <PiTextAaBold size={26}/>, <PiMathOperationsBold size={26}/>, <PiClockCountdownBold size={26}/>, <PiPaletteBold size={26}/>, <PiUserBold size={26}/>, <PiArrowsOutCardinalBold size={26}/>, <BsCalendar2Day size={26}/>, <BsCalendarMonth  size={26} />]
+
   return (
     <main className={styles.container}>
         <header className={styles.header_page}>
-          <HeaderPage title={"Exercícios"} />
+          <HeaderPage title="Exercícios" />
         </header>
         <div className={styles.main_content}>
 
@@ -20,7 +24,15 @@ export default function Exercises() {
                 </header>
                 <nav>
                       <ul>
-                          <li>
+                        {json.map(challenge => (
+                          <li key={challenge.id}>
+                            <Link href={`/exercises/${challenge.id}`}>
+                              {icons[challenge.id]}
+                              {challenge.name}
+                            </Link>
+                          </li>
+                        ))}
+                          {/* <li>
                             <Link href={"/exercises/display-numbers"}>
                               <PiListNumbersBold size={26}  />
                               Números
@@ -61,7 +73,7 @@ export default function Exercises() {
                               <PiArrowsOutCardinalBold   size={26} />
                               Direções
                             </Link>
-                          </li>
+                          </li> */}
                         
                       </ul>
                 </nav>

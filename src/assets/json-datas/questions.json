@@ -1,0 +1,66 @@
+[
+  {
+    "id": 0,
+    "name": "Números",
+    "datasDefault": false,
+    "ceil": 0,
+    "floor": 100,
+    "timeDuration": 3
+  },
+  {
+    "id": 1,
+    "name": "Alfabeto",
+    "datasDefault": true,
+    "timeDuration": 3,
+    "datasToDisplay": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  },
+  {
+    "id": 2,
+    "name": "Operações",
+    "datasDefault": true,
+    "timeDuration": 3
+  },
+  {
+    "id": 3,
+    "name": "Horas",
+    "datasDefault": false,
+    "ceil": 0,
+    "floor": 100,
+    "timeDuration": 3
+  },
+  {
+    "id": 4,
+    "name": "Cores",
+    "datasDefault": true,
+    "timeDuration": 3,
+    "datasToDisplay": ["#ff0000", "#00ff00", "#0000ff", "#008000", "#000000", "#00ffff","#808080", "#FF1493", "#FFFF00", "#FF4500"]
+  },
+  {
+    "id": 5,
+    "name": "Pronomes Pessoais",
+    "datasDefault": true,
+    "timeDuration": 3,
+    "datasToDisplay": ["I", "You", "He", "She", "It", "We", "They"]
+  },
+  {
+    "id": 6,
+    "name": "Direções",
+    "datasDefault": true,
+    "timeDuration": 3,
+    "datasToDisplay": ["Up", "Left", "Right", "Down", "turn left", "turn right", "go straight ahead", "go past", "cross", "at the corner of", "next to", "opposite", "between", "on", "under", "below","over", "above", "in", "behind", "in front of", "into", "out of", "up", "through", "across", "bisede", "around"]
+  },
+  {
+    "id": 7,
+    "name": "Dias da Semana",
+    "datasDefault": true,
+    "timeDuration": 3,
+    "datasToDisplay": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  },
+  {
+    "id": 8,
+    "name": "Meses",
+    "datasDefault": true,
+    "timeDuration": 3,
+    "datasToDisplay": ["January","February","March","April","May","June","July","August","September","October", "November","December"]
+  }
+]
