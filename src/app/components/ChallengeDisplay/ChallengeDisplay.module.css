@@ -54,3 +54,14 @@
   height: 50;
   box-shadow: 7px 3px 36px -21px rgba(51,51,51,0.67);
 }
+
+@media (max-width: 600px) {
+  .main_contet div{
+    font-size: 80px;
+  }
+}
+@media (max-width: 350px) {
+  .main_contet div{
+    font-size: 40px;
+  }
+}

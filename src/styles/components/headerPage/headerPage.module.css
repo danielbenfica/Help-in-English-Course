@@ -1,7 +1,7 @@
 .page__header_title{
   display: flex;
   align-items: center;
-  margin: 32px ;
+  margin: 64px 0 12px 32px;
   color: #333;
   font-size: 2rem;
 }

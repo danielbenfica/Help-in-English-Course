@@ -1,5 +1,5 @@
 import HeaderPage from "@/components/headerPage/headerPage";
-import styles from "@/styles/pages/exercises/exercises.module.css";
+import styles from "./Exercises.module.css";
 import Link from "next/link";
 import json from '@/assets/json-datas/questions.json'
 import { PiUserBold, PiArrowsOutCardinalBold, PiListNumbersBold, PiTextAaBold, PiMathOperationsBold, PiClockCountdownBold, PiPaletteBold} from "react-icons/pi";
@@ -60,6 +60,12 @@ export default function Exercises() {
                             <Link href={"/exercises/display-colors"}>
                               <PiPaletteBold  size={26} />
                               Cores
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href={"/exercises/display-pronouns"}>
+                              <PiUserBold  size={26} />
+                              Pronomes Pessoais
                             </Link>
                           </li>
                           <li>

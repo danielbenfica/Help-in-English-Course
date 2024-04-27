@@ -1,28 +1,30 @@
 'use client'
 import HeaderPage from "@/components/headerPage/headerPage";
-import Header from "@/components/layout/header";
-import { PiUserBold, PiArrowsOutCardinalBold, PiListNumbers, PiTextAa, PiMathOperations, PiClockCountdown, PiPaletteBold} from "react-icons/pi";
+import Header from "@/app/components/Header";
 import styles from '@/styles/pages/settings/settings.module.css'
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+import challenges from '@/assets/json-datas/questions.json'
+import SettingInput from "@/app/components/SettingInput";
+import { PiUserBold, PiArrowsOutCardinalBold, PiListNumbersBold, PiTextAaBold, PiMathOperationsBold, PiClockCountdownBold, PiPaletteBold} from "react-icons/pi";
+import { BsCalendar2Day, BsCalendarMonth  } from "react-icons/bs";
+import { GetAllChallengesDatas, SetChallengesDatas } from "@/app/components/ManageDatasStorage";
 
-export default function Settings(){
-  const [initialNumber, setInitialNumber] = useState(0)
-  const [finalNumber, setFinalNumber] = useState(0)
-  const [durationNumber, setDurationNumber] = useState(0)
-  const [durationAlphabet, setDurationAlphabet] = useState(0)
-  const [durationOperations, setDurationOperations] = useState(0)
-  const [durationHours, setDurationHours] = useState(0)
-  const [durationColors, setDurationColors] = useState(0)
-  const [durationPersonalPronouns, setDurationPersonalPronouns] = useState(0)
-  const [durationDirections, setDurationDirections] = useState(0)
 
-  function saveDatasUpdate(){
-    localStorage.setItem('settingsData', `
-    {"durationAlphabet": ${durationAlphabet},"durationNumber":${durationNumber},"durationOperations":${durationOperations},"durationHours":${durationHours},"initialNumber":${initialNumber},"finalNumber":${finalNumber},"durationColors":${durationColors}, "durationPersonalPronouns": ${durationPersonalPronouns}, "durationDirections": ${durationDirections}}`)
+export default function Settings() {
+  const icons = [<PiListNumbersBold size={26}/>, <PiTextAaBold size={26}/>, <PiMathOperationsBold size={26}/>, <PiClockCountdownBold size={26}/>, <PiPaletteBold size={26}/>, <PiUserBold size={26}/>, <PiArrowsOutCardinalBold size={26}/>, <BsCalendar2Day size={26}/>, <BsCalendarMonth  size={26} />]
+
+  const [challengeDuration, setChallengeDuration] = useState([])
+
+  function saveDatasUpdate() {
+    const dataToUpdate = `{${challenges.map(challenge => (
+      `"${challenge.name}": ${challengeDuration[challenge.id]}`
+    ))}}`
     
+    SetChallengesDatas(dataToUpdate)
+
     toast.success('Alterações salvas com sucesso!', {
       position: "top-center",
       autoClose: 5000,
@@ -32,28 +34,23 @@ export default function Settings(){
       draggable: true,
       progress: undefined,
       theme: "light",
-      });
+    });
   }
 
   useEffect(() => {
-    const localStorageDatas = localStorage.getItem('settingsData')
-    let localDatas = ''
-    if(!localStorageDatas){
-      localDatas = '{"durationAlphabet": 3,"durationNumber":3,"durationOperations":5,"durationHours":4,"initialNumber":0,"finalNumber":100,"durationColors":3,"durationPersonalPronouns":3,"durationDirections":3}'
-      localStorage.setItem('settingsData', localDatas)
-    }
-  
-    const settingsDatas = localStorageDatas ? JSON.parse(localStorageDatas) : localDatas
-    setInitialNumber(settingsDatas.initialNumber)
-    setFinalNumber(settingsDatas.finalNumber)
-    setDurationNumber(settingsDatas.durationNumber)
-    setDurationAlphabet(settingsDatas.durationAlphabet)
-    setDurationOperations(settingsDatas.durationOperations)
-    setDurationHours(settingsDatas.durationHours)
-    setDurationColors(settingsDatas.durationColors)
-    setDurationPersonalPronouns(settingsDatas.durationPersonalPronouns)
-    setDurationDirections(settingsDatas.durationDirections)
+    const settingsDatas = GetAllChallengesDatas()
+    challenges.map(challenge => {
+        challengeDuration[challenge.id] = settingsDatas[challenge.name]
+        setChallengeDuration([...challengeDuration])
+    })
   }, [])
+
+  const handleChangeChallengeDuration = (e, index) => {
+    console.log(challengeDuration)
+    challengeDuration[index] = e.target.value
+    setChallengeDuration([...challengeDuration])
+    console.log(challengeDuration)
+  }
 
   return (
     <>
@@ -62,164 +59,35 @@ export default function Settings(){
         <header>
           <HeaderPage title="Configurações" />
         </header>
-        <main className={styles.main_content}>
-          <ToastContainer/>
+        <div className={styles.main_container}>
           <header>
             <h3>
-              Questões  
+              Questões
             </h3>
           </header>
+          <ToastContainer />
+          <main className={styles.main_content}>
+            {challenges.map(challenge => (
+              <SettingInput 
+              key={challenge.id} 
+              icon={icons[challenge.id]}
+              name={challenge.name}
+              value={challengeDuration[challenge.id]} 
+              onChange={e => handleChangeChallengeDuration(e, challenge.id)} />
+            )
+            )}
 
-          <div  className={styles.option_card}>
-            <div> 
-              <PiListNumbers size={32}  />
-            </div>
-            <div>
-              <h2>Números:</h2>
-              <div>
-                <div>
-                  <span>Intervalo:</span>
-                  <input 
-                    type="number" 
-                    onChange={(e) => setInitialNumber(e.target.value)}
-                    value={initialNumber}
-                    /> a {' '}
-                  <input 
-                    type="number" 
-                    onChange={(e) => setFinalNumber(e.target.value)}
-                    value={finalNumber}
-                    />
-                </div>
-                <div>
-                  <span>Duração:</span>
-                  <input 
-                    type="number"
-                    onChange={(e) => setDurationNumber(e.target.value)}
-                    value={durationNumber} /> segundos
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div  className={styles.option_card}>
-            <div> 
-              <PiTextAa size={32}  />
-            </div>
-            <div>
-            <h2>Alfabeto:</h2>
-              <div>
-                <div>
-                  <span>Duração:</span>
-                  <input 
-                    onChange={(e) => setDurationAlphabet(e.target.value)}
-                    value={durationAlphabet}
-
-                    type="number" /> segundos
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div  className={styles.option_card}>
-            <div> 
-              <PiMathOperations size={32}  />
-            </div>
-            <div>
-            <h2>Operações:</h2>
-              <div>
-                <div>
-                  <span>Duração:</span>
-                  <input
-                    onChange={(e) => setDurationOperations(e.target.value)}
-                    value={durationOperations}
-                    type="number" /> segundos
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div  className={styles.option_card}>
-            <div> 
-              <PiClockCountdown size={32}  />
-            </div>
-            <div>
-            <h2>Horas:</h2>
-              <div>
-                <div>
-                  <span>Duração:</span>
-                  <input 
-                    onChange={(e) => setDurationHours(e.target.value)}
-                    value={durationHours}
-                    type="number" /> segundos
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div  className={styles.option_card}>
-            <div> 
-              <PiPaletteBold size={32}  />
-            </div>
-            <div>
-            <h2>Cores:</h2>
-              <div>
-                <div>
-                  <span>Duração:</span>
-                  <input 
-                    onChange={(e) => setDurationColors(e.target.value)}
-                    value={durationColors}
-                    type="number" /> segundos
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div  className={styles.option_card}>
-            <div> 
-              <PiUserBold  size={32}  />
-            </div>
-            <div>
-            <h2>Pronomes Pessoais:</h2>
-              <div>
-                <div>
-                  <span>Duração:</span>
-                  <input 
-                    onChange={(e) => setDurationPersonalPronouns(e.target.value)}
-                    value={durationPersonalPronouns}
-                    type="number" /> segundos
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div  className={styles.option_card}>
-            <div> 
-              <PiArrowsOutCardinalBold size={32}  />
-            </div>
-            <div>
-            <h2>Direções:</h2>
-              <div>
-                <div>
-                  <span>Duração:</span>
-                  <input 
-                    onChange={(e) => setDurationDirections(e.target.value)}
-                    value={durationDirections}
-                    type="number" /> segundos
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <footer className={styles.footer__buttons}>
+          </main>
+            <footer className={styles.footer__buttons}>
               <Link href="/exercises/">
-            <button>
-              Descartar
-              </button>
-              </Link> 
-            <button onClick={saveDatasUpdate}>Salvar</button>
-          </footer>
+                <button>
+                  Descartar
+                </button>
+              </Link>
+              <button onClick={saveDatasUpdate}>Salvar</button>
+            </footer>
 
-        </main>
+        </div>
       </div>
 
     </>
