@@ -7,15 +7,6 @@ import HeaderPage from '@/components/headerPage/headerPage';
 export default function DisplayChallenge({isDataVisible, dataToDisplay, nameChallenge}) {
   const router = useRouter();
 
-  useEffect(() => {
-    const localStorageDatas = localStorage.getItem('settingsData')
-    let localDatas = ''
-    if(!localStorageDatas){
-      localDatas = '{"durationAlphabet": 3,"durationNumber":3,"durationOperations":5,"durationHours":4,"initialNumber":0,"finalNumber":100,"durationColors":3,"durationPersonalPronouns":3,"durationDirections": 3}'
-      localStorage.setItem('settingsData', localDatas)
-    }
-  },[])
-
   return (
     <div className={styles.container}>
         <div></div>

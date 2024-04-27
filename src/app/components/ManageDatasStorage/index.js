@@ -6,14 +6,13 @@ export function SetChallengesDatas(Challenges){
   )
 }
 export function GetChallengeDuration(ChallengeId){
-  let timeToDisplayText = localStorage.getItem('settingsDuration')
-  timeToDisplayText = JSON.parse(timeToDisplayText)
+  let timeToDisplayText = GetAllChallengesDatas()
   return timeToDisplayText[ChallengeId]
 }
 
 export function GetAllChallengesDatas(){
   let timeToDisplayText = localStorage.getItem('settingsDuration')
-  if(timeToDisplayText === ''){
+  if(!timeToDisplayText){
     let dataToSave = `{${challenges.map(challenge => (
       `"${challenge.name}": ${challenge.timeDuration}`
     ))}}`;
