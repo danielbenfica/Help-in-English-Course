@@ -7,7 +7,7 @@ export default function DisplayColors() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <HeaderPage title={"Exercício das Horas"} /> 
+        {/* <HeaderPage title={"Exercício das Horas"} />  */}
       </header>
       <main className={styles.main__content}>
           <LogicChallenge />

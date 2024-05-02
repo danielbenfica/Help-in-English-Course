@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import DisplayChallenge from "../challenge/DisplayChallenge";
+import { GetChallengeDuration } from "@/app/components/ManageDatasStorage";
 
 
 export default function LogicChallenge() {
@@ -14,8 +15,10 @@ export default function LogicChallenge() {
       
 
   useEffect(() => {
-    const timeToDisplayText = JSON.parse(localStorage.getItem('settingsData'))
-    setTimeDisplay(timeToDisplayText.durationOperations * 1000)
+    // const timeToDisplayText = JSON.parse(localStorage.getItem('settingsData'))
+    // setTimeDisplay(timeToDisplayText.durationOperations * 1000)
+    setTimeDisplay(GetChallengeDuration("Operações") * 1000)
+
   }, [])
 
   function generateRandomNumber(min, max){
@@ -63,6 +66,6 @@ export default function LogicChallenge() {
   }, [isNumberVisible])
   
   return (
-    <DisplayChallenge isNumberVisible={isNumberVisible} dataToDisplay={operation} />
+    <DisplayChallenge isDataVisible={isNumberVisible} dataToDisplay={operation} nameChallenge="Operações" />
   );
 }

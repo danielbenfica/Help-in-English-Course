@@ -8,7 +8,7 @@ export default function DisplayOperations() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <HeaderPage title={"Exercício de Operações"} /> 
+        {/* <HeaderPage title={"Exercício de Operações"} />  */}
       </header> 
       <main className={styles.main__content}>
         <LogicChallenge />

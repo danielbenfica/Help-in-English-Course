@@ -1,13 +1,15 @@
+"use client"
 import HeaderPage from "@/components/headerPage/headerPage";
 import styles from "./Exercises.module.css";
 import Link from "next/link";
 import json from '@/assets/json-datas/questions.json'
 import { PiUserBold, PiArrowsOutCardinalBold, PiListNumbersBold, PiTextAaBold, PiMathOperationsBold, PiClockCountdownBold, PiPaletteBold} from "react-icons/pi";
 import { BsCalendar2Day, BsCalendarMonth  } from "react-icons/bs";
+import { useEffect } from "react";
 
 
 export default function Exercises() {
-
+  const id_page = ["display-numbers", "1","display-operations", "display-hours", "display-colors", "5", "6", "7", "8", "9"]
   const icons = [<PiListNumbersBold size={26}/>, <PiTextAaBold size={26}/>, <PiMathOperationsBold size={26}/>, <PiClockCountdownBold size={26}/>, <PiPaletteBold size={26}/>, <PiUserBold size={26}/>, <PiArrowsOutCardinalBold size={26}/>, <BsCalendar2Day size={26}/>, <BsCalendarMonth  size={26} />]
 
   return (
@@ -25,13 +27,15 @@ export default function Exercises() {
                 <nav>
                       <ul>
                         {json.map(challenge => (
-                          <li key={challenge.id}>
-                            <Link href={`/exercises/${challenge.id}`}>
-                              {icons[challenge.id]}
-                              {challenge.name}
-                            </Link>
-                          </li>
-                        ))}
+                              <li key={challenge.id}>
+                                <Link href={`/exercises/${id_page[challenge.id]}`}>
+                                  {icons[challenge.id]}
+                                  {challenge.name}
+                                </Link>
+                              </li>
+                      ))}
+                        
+                      
                           {/* <li>
                             <Link href={"/exercises/display-numbers"}>
                               <PiListNumbersBold size={26}  />
