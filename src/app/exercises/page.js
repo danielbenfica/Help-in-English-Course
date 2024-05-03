@@ -27,12 +27,12 @@ export default function Exercises() {
                 <nav>
                       <ul>
                         {json.map(challenge => (
+                            <Link href={`/exercises/${id_page[challenge.id]}`}>
                               <li key={challenge.id}>
-                                <Link href={`/exercises/${id_page[challenge.id]}`}>
                                   {icons[challenge.id]}
                                   {challenge.name}
-                                </Link>
                               </li>
+                            </Link>
                       ))}
                         
                       

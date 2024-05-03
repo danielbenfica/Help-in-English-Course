@@ -36,7 +36,7 @@
   gap: 1rem;
 }
 
-.links__lessons_container nav ul li{
+.links__lessons_container nav ul a{
   grid-column-start: 2 3;
   list-style: none;
   display: flex;
@@ -47,11 +47,11 @@
   border-radius: 8px;
 }
 
-.links__lessons_container nav ul li:hover{
+.links__lessons_container nav ul a:hover{
   background-color: #cdcdcd;
 }
 
-.links__lessons_container nav ul li a{
+.links__lessons_container nav ul a li{
   font-weight: 600;
   padding: 1px 0;
   display: flex;
