@@ -62,5 +62,54 @@
     "datasDefault": true,
     "timeDuration": 3,
     "datasToDisplay": ["January","February","March","April","May","June","July","August","September","October", "November","December"]
+  },
+  {
+    "id": 9,
+    "name": "Partes do Corpo",
+    "datasDefault": true,
+    "timeDuration": 3,
+    "datasToDisplay": ["Eye","Mouth","Shoulder","Torso","Stomach","Hand","Foot","Hair","Cheek","Neck", "Breast","Chest", "Hip", "Leg", "Ear", "Head", "Nose", "Teeth", "Tongue", "Finger", "Arm", "Knee", "Toe", "Ankle"]
+  },
+  {
+    "id": 10,
+    "name": "Artigos Indefinidos",
+    "datasDefault": true,
+    "timeDuration": 3,
+    "datasToDisplay": ["A", "AN", "THE"]
+  },
+  {
+    "id": 11,
+    "name": "Membros da Família",
+    "datasDefault": true,
+    "timeDuration": 3,
+    "datasToDisplay": ["Grandfather", "Grandpa", "Grandmother", "Grandma", "Father", "Dad", "Mother", "Mom", "Husband", "Wife", "Parents", "Son", "Daugther", "Kids", "Children", "Brother", "Sister", "Uncle", "Aunt", "Cousin", "Grandson", "Grand daugther", "Nephew", "Niece"]
+  },
+  {
+    "id": 12,
+    "name": "Roupas",
+    "datasDefault": true,
+    "timeDuration": 3,
+    "datasToDisplay": ["Shoes", "Sneakers", "Sock", "Cap", "Leather", "Jeans", "Jacket", "Tie", "Skirt", "Suit", "Pants", "Blouse", "Dress", "Boxer"]
+  },
+  {
+    "id": 13,
+    "name": "Pronomes demonstrativos",
+    "datasDefault": true,
+    "timeDuration": 3,
+    "datasToDisplay": ["This", "These", "That", "Those"]
+  },
+  {
+    "id": 14,
+    "name": "Estações do ano",
+    "datasDefault": true,
+    "timeDuration": 3,
+    "datasToDisplay": ["Winter", "Summer", "Spring", "Autumn"]
+  },
+  {
+    "id": 15,
+    "name": "Clima",
+    "datasDefault": true,
+    "timeDuration": 3,
+    "datasToDisplay": ["Sunny", "Party Cloudy", "Windy", "Rainy", "Cloudy", "Snowy"]
   }
 ]
